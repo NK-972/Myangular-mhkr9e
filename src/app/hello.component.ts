@@ -24,7 +24,7 @@ export class HelloComponent  {
       JSONQury[value.split(", ")[0]] = value.split(", ");
     })
     this.json_produits = JSONQury as JSON;
-    console.log(this.json_produits);
+    //console.log(this.json_produits);
   }
 
   public getData(json: JSON, key:String, turn:Number, columns:string): string{
@@ -35,4 +35,5 @@ export class HelloComponent  {
       }
       return null;
     }
+  
 }
