@@ -7,4 +7,15 @@ import { Component, Input } from '@angular/core';
 })
 export class HelloComponent  {
   @Input() name: string;
+
+
+  public StringToTable(str:String){
+    let sortie: Array<string>;
+    let table: Array<Array<string>>;
+    sortie = str.replace("[[", "").replace("]]", "").split("], [");
+    sortie.forEach(function (value) {
+      table.push(value.split(", "));
+    })
+    
+  }
 }
