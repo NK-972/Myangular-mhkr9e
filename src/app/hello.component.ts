@@ -12,7 +12,7 @@ export class HelloComponent  {
 
    ngOnInit() {
       this.StringToTable(this.produits);
-      console.log(this.getData(this.json_produits, "Bouteille d'eau", 2));
+      console.log(this.getData(this.json_produits, "Bouteille d'eau", 2, 'recette'));
    }
 
   public StringToTable(str:String){
@@ -20,18 +20,19 @@ export class HelloComponent  {
     var JSONQury = {};
     sortie = str.replace("[[", "").replace("]]", "").split("], [");
     sortie.forEach(function (value) {
-      console.log(value.split(", "));
+      //console.log(value.split(", "));
       JSONQury[value.split(", ")[0]] = value.split(", ");
     })
     this.json_produits = JSONQury as JSON;
     console.log(this.json_produits);
   }
 
-  public getData(json: JSON, key:String, turn:Number): string{
+  public getData(json: JSON, key:String, turn:Number, columns:string): string{
     let sortie: Array<string> = Object.keys(json) as Array<string>;
-        if(key+' '+turn in json){
-           return json[key+' '+turn];
-        }
-        return null;
+    let index: Number = json['JSON'].indexOf(columns);
+    if(key+' '+turn in json){
+          return json[key+' '+turn][index];
+      }
+      return null;
     }
 }
