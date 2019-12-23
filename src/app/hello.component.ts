@@ -12,6 +12,7 @@ export class HelloComponent  {
 
    ngOnInit() {
       this.StringToTable(this.produits);
+      console.log(this.getData(this.json_produits, "Bouteille d'eau", 2));
    }
 
   public StringToTable(str:String){
@@ -25,4 +26,12 @@ export class HelloComponent  {
     this.json_produits = JSONQury as JSON;
     console.log(this.json_produits);
   }
+
+  public getData(json: JSON, key:String, turn:Number): string{
+    let sortie: Array<string> = Object.keys(json) as Array<string>;
+        if(key+' '+turn in json){
+           return json[key+' '+turn];
+        }
+        return null;
+    }
 }
