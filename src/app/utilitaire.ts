@@ -1,4 +1,5 @@
-export class Utillitaire {
+export class Utilitaire {
+  
   public StringToTable(str:String): JSON{
     let sortie: Array<string>;
     var JSONQury = {};

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { utillitaire } from ../utilitaire;
+//import { utillitaire } from ../utilitaire;
 
 interface Produit{
   Prix : Number
@@ -24,7 +24,6 @@ interface Produit{
 })
 export class ProduitComponent implements OnInit {
   @Input() data: JSON;
-  name = 'Angular';
   produit: Produit;
 
   constructor() { }
@@ -32,7 +31,7 @@ export class ProduitComponent implements OnInit {
   ngOnInit() {
     console.log(this.data);
     this.produit ={
-      Prix : Number(this.data)
+      Prix : Number()
       , RD : Number()
       , Installations: []
       , InstallationSelected: ''
