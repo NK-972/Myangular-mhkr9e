@@ -1,5 +1,5 @@
 
-<div *ngFor='let x of json_produits'>
-  <app-produit [data]=json_produits></app-produit>
+<div *ngFor='let x of Object.keys(json_produits)'>
+  <app-produit [data]=json_produits[x]></app-produit>
 </div>
 
