@@ -23,7 +23,7 @@ interface Produit{
   styleUrls: ['./produit.component.css']
 })
 export class ProduitComponent implements OnInit {
-  @Input() data: JSON;
+  @Input() data: Array<string>;
   produit: Produit;
 
   constructor() { }
