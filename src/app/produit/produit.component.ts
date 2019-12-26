@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { app }
+import { utillitaire } from ../utilitaire;
 
 interface Produit{
   Prix : Number
