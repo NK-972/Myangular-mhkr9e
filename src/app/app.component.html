@@ -1,5 +1,8 @@
 
-<div *ngFor='let x of Object.keys(json_produits)'>
-  <app-produit [data]=json_produits[x]></app-produit>
+<div *ngIf='json_produits'>
+  <ul>
+    <li *ngFor="let book of key_product">{{ book }}</li>
+  </ul>
+  <!-- <app-produit data={{ json_produits[x] }}></app-produit> -->
 </div>
 
