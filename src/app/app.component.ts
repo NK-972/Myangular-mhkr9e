@@ -21,6 +21,7 @@ export class AppComponent  {
     this.json_produits = this.utilitaire.StringToTable(this.produits);
     console.log(this.utilitaire.getData(this.json_produits, "Bouteille d'eau", 2, 'recette'));
     this.key_product = Object.keys(this.json_produits);
+    console.log(this.key_product[0].includes('J'));
   }
 
 }

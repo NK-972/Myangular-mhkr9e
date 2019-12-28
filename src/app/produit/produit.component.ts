@@ -31,7 +31,7 @@ export class ProduitComponent implements OnInit {
   constructor() { }
   
   createProduit(data){
-    id_Product = Utilitaire.getData();
+    //id_Product = Utilitaire.getData();
     this.produit ={
       Prix : Number()
       , RD : Number()
