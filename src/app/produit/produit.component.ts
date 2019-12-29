@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Utilitaire } from '../utilitaire';
+import { AppComponent } from '../app.component';
 
 interface Produit{
   Prix : Number
@@ -24,14 +25,14 @@ interface Produit{
 })
 export class ProduitComponent implements OnInit {
   @Input() data: Array<string>;
+  @Input() id_Product: string;
   utilitaire: Utilitaire = new Utilitaire();
-  id_Product: string; 
   produit: Produit;
 
   constructor() { }
   
   createProduit(data){
-    //id_Product = Utilitaire.getData();
+    id_Product = Utilitaire.getData(data, "Bouteille d'eau", 2, 'recette'));
     this.produit ={
       Prix : Number()
       , RD : Number()
@@ -51,6 +52,8 @@ export class ProduitComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.data);
+    console.log(this.id_Product);
+    console.log(this.app.key_product);
   }
 
 }
