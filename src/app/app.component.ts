@@ -7,11 +7,6 @@ import { Utilitaire } from './utilitaire'
   styleUrls: [ './app.component.css' ]
 })
 
-
-
-
-
-
 export class AppComponent  {
 
   constructor() { }
