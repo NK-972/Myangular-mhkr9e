@@ -2,21 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Utilitaire } from '../utilitaire';
 import { AppComponent } from '../app.component';
 
-interface Produit{
-  Prix : Number
-  , RD : Number
-  , Installations: string[]
-  , InstallationSelected: string
-  , Production: Number
-  , Qualite: Number
-  , IP: Number
-  , IT: Number
-  , Notoriete: Number
-  , Demande: Number
-  , Stock: Number
-  , MB: Number
-  , TMB: Number
-}
 
 @Component({
   selector: 'app-produit',
@@ -27,28 +12,8 @@ export class ProduitComponent implements OnInit {
   @Input() data: Array<string>;
   @Input() id_Product: string;
   utilitaire: Utilitaire = new Utilitaire();
-  produit: Produit;
 
   constructor() { }
-  
-  createProduit(data){
-    id_Product = Utilitaire.getData(data, "Bouteille d'eau", 2, 'recette'));
-    this.produit ={
-      Prix : Number()
-      , RD : Number()
-      , Installations: []
-      , InstallationSelected: ''
-      , Production: Number()
-      , Qualite: Number()
-      , IP: Number()
-      , IT: Number()
-      , Notoriete: Number()
-      , Demande: Number()
-      , Stock: Number()
-      , MB: Number()
-      , TMB: Number() 
-    }
-  }
 
   ngOnInit() {
     console.log(this.data);
